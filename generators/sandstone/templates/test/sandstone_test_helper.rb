@@ -1,4 +1,4 @@
-require 'test_helper'
+require File.dirname(__FILE__) + '/test_helper'
 require 'rubygems'
 require 'mocha'
 require File.dirname(__FILE__) + '/sandstone_test_factory'

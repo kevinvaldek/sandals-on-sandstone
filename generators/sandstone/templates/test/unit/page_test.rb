@@ -6,8 +6,8 @@ module UnitTest
     should_have_many :audits
     should_belong_to :page_template
     should_belong_to :editor
-    should_require_unique :path
-    should_require :content
+    should_require_unique_attributes :path
+    should_require_attributes :content
 
     def test_layout_should_default_to_application
       Page.any_instance.stubs(:page_template).returns(nil)

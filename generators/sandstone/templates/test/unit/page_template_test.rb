@@ -4,8 +4,8 @@ module FunctionalTest
 
   class PageTemplateTest < Test::Unit::TestCase
     should_have_many :pages
-    should_require :name
-    should_require_unique :name
+    should_require_attributes :name
+    should_require_unique_attributes :name
 
     # hits the database, mocks the filesystem
     def test_file_should_be_created_with_record

@@ -4,7 +4,7 @@ module UnitTest
 
   class AuditTest < Test::Unit::TestCase
     should_belong_to :editor
-    should_require :event, :editor_id
+    should_require_attributes :event, :editor_id
   end
 
 end

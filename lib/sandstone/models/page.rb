@@ -95,7 +95,7 @@ module Sandstone
 
         private
         def retire_old_published_versions
-          self.versions.update_all('status = "retired"', ['version < ? AND status = ?', self.version, 'published']) if self.status == 'published'
+          self.versions.update_all("status = 'retired'", ['version < ? AND status = ?', self.version, 'published']) if self.status == 'published'
         end
 
         def page_filename 

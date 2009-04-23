@@ -1,7 +1,6 @@
-require 'test_helper'
+require File.dirname(__FILE__) + '/test_helper'
 require 'rubygems'
 require 'mocha'
-require 'tester_xtreme'
 require File.dirname(__FILE__) + '/sandstone_test_factory'
 include Sandstone::TestFactory
 

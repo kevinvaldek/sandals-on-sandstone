@@ -45,8 +45,8 @@ class SandstoneGenerator < Rails::Generator::Base
 
         # handle tests
         copy_files_to['test', lambda { |file| file }]
-        # handle JavaScripts & stylesheets
-        %w(javascripts stylesheets).each do |asset|
+        # handle JavaScripts, stylesheets & images
+        %w(javascripts stylesheets images).each do |asset|
           copy_files_to[asset, lambda { |file| File.join('public', file) }]
         end
       end

@@ -5,8 +5,11 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>sandstone<%= " :: #{@page_title.downcase}" if @page_title %></title>
+  <%= stylesheet_link_tag 'moorte' %>
   <%= stylesheet_link_tag 'sandstone' %>
   <%= javascript_include_tag 'mootools/mootools-1.2.3-core' %>
+  <%= javascript_include_tag 'mootools/mootools-1.2.3.1-more' %>
+  <%= javascript_include_tag 'moorte' %>
   <%= javascript_include_tag 'action_chain' %>
   <%= javascript_include_tag 'sandstone' %>
 </head>

@@ -5,5 +5,9 @@ ActionChain.add({
            this.fieldset.fade('in');
            return false;
        });
+   },
+
+   'textarea': function() {
+       this.moorte();
    }
 });

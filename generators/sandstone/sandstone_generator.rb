@@ -29,22 +29,24 @@ class SandstoneGenerator < Rails::Generator::Base
     
     record do |m|
       Dir.chdir(template_dir) do
-        
+        # helper proc
+        copy_files_to = lambda { |directory, target_proc|
+          m.directory(target_proc[directory])
+          Dir.glob(File.join(directory, '**', '*')).each do |file|
+            m.directory(target_proc[file]) if File.directory?(file)
+            m.file(file, target_proc[file]) if File.file?(file)
+          end
+        }
+
         # handle models, controllers, helpers, and views
         %w(models controllers helpers views).each do |area|
-          m.directory(File.join('app', area))
-          Dir.glob(File.join(area, '**', '*')).each do |file|
-            m.directory(File.join('app', file)) if File.directory?(file)
-            m.file(file, File.join('app', file)) if File.file?(file)
-          end
+          copy_files_to[area, lambda { |file| File.join('app', file) }]
         end
-                
+
         # handle tests
-        m.directory('test')
-        Dir.glob(File.join('test', '**', '*')).each do |file|
-          m.directory(file) if File.directory?(file)
-          m.file(file, file) if File.file?(file)
-        end
+        copy_files_to['test', lambda { |file| file }]
+        # handle JavaScripts
+        copy_files_to['javascripts', lambda { |file| File.join('public', file) }]
       end
       
       # Create directory for cached CMS pages

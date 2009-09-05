@@ -9,6 +9,12 @@ end
 require 'mocha'
 require File.dirname(__FILE__) + '/sandstone_test_factory'
 
+class ActiveSupport::TestCase
+  def login_as(user)
+    @request.session[:user_id] = user
+  end
+end
+
 # Re-raise controller errors
 class ApplicationController < ActionController::Base
   def rescue_action(e)

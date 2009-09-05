@@ -10,6 +10,7 @@
   <%= javascript_include_tag 'mootools/mootools-1.2.3-core' %>
   <%= javascript_include_tag 'mootools/mootools-1.2.3.1-more' %>
   <%= javascript_include_tag 'moorte' %>
+  <%= javascript_include_tag 'widgets' %>
   <%= javascript_include_tag 'action_chain' %>
   <%= javascript_include_tag 'sandstone' %>
 </head>
@@ -38,7 +39,7 @@
 </div>
 
 <div id="main">
-  <%= content_tag :p, flash[:notice], :class => 'notice' if flash[:notice] -%>
+  <%= content_tag :p, flash[:notice], :id => 'notice' -%>
 
   <%= yield  %>
 </div>

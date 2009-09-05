@@ -57,9 +57,9 @@ a:hover {
   list-style: square;
 }
 
-
-
-p.notice {
+#notice {
+  visibility: hidden;
+  height: 20px;
   background-color: #ff9;
   border: 2px solid #f90;
   padding: 10px;

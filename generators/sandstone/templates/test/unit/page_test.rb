@@ -8,7 +8,7 @@ class PageTest < ActiveSupport::TestCase
   should_validate_presence_of :content
 
   def setup
-    create_page!
+    Factory(:page)
   end
 
   def test_layout_should_default_to_application

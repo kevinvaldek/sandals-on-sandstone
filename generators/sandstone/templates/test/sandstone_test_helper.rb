@@ -8,7 +8,6 @@ end
 
 require 'mocha'
 require File.dirname(__FILE__) + '/sandstone_test_factory'
-include Sandstone::TestFactory
 
 # Re-raise controller errors
 class ApplicationController < ActionController::Base

@@ -1,45 +1,25 @@
-module Sandstone
-  module TestFactory
-       
-    def create_audit!(attributes = {})
-      default_attributes = {
-        # :key => 'value'
-      }
-      Audit.create! default_attributes.merge(attributes)
-    end
-    
-    def create_editor!(attributes = {})
-      default_attributes = {
-        # :key => 'value'
-      }
-      Editor.create! default_attributes.merge(attributes)
-    end
+Factory.define :user do |f|
+  f.sequence(:login) { |n| "hank#{n}" }
+  f.name "Hank"
+  f.password "hanksword"
+  f.password_confirmation "hanksword"
+  f.sequence(:email) { |n| "hank#{n}@sandals-on-sandstone.com" }
+end
 
-    def create_user!(attributes = {})
-      default_attributes = {
-        :login => 'hank',
-        :email => 'hank@sandals-on-sandstone.com',
-        :password => 'hankword',
-        :password_confirmation => 'hankword'
-      }
-      User.create! default_attributes.merge(attributes)
-    end
+Factory.define :editor do |f|
 
-    def create_page!(attributes = {})
-      default_attributes = {
-        :path => '',
-        :title => 'Test Page',
-        :content => 'test',
-        :parent_id => nil
-      }
-      Page.create! default_attributes.merge(attributes)
-    end
+end
 
-    def create_page_template!(attributes = {})
-      default_attributes = {
-        :name => 'Test Template'
-      }
-      PageTemplate.create! default_attributes.merge(attributes)
-    end
-  end
+Factory.define :audit do |f|
+
+end
+
+Factory.define :page do |f|
+  f.sequence(:path) { |n| "test_page_#{n}" }
+  f.sequence(:title) { |n| "Test page #{n}" }
+  f.content "Nada"
+end
+
+Factory.define :page_template do |f|
+  f.sequence(:name) { |n| "Test template #{n}" }
 end

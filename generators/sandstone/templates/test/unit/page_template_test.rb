@@ -6,7 +6,7 @@ class PageTemplateTest < ActiveSupport::TestCase
   should_validate_uniqueness_of :name
 
   def setup
-    create_page_template!(:content => 'eephus')
+    Factory(:page_template, :content => 'eephus')
   end
 
   # hits the database, mocks the filesystem

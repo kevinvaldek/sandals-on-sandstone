@@ -4,15 +4,8 @@ require 'audits_controller'
 # Re-raise errors caught by the controller.
 class AuditsController; def rescue_action(e) raise e end; end
 
-class AuditsControllerTest < Test::Unit::TestCase
+class AuditsControllerTest < ActionController::TestCase
   def setup
-    @controller = AuditsController.new
-    @request    = ActionController::TestRequest.new
-    @response   = ActionController::TestResponse.new
-  end
 
-  # Replace this with your real tests.
-  def test_truth
-    assert true
   end
 end

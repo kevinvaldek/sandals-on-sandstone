@@ -50,10 +50,6 @@ class SandstoneGenerator < Rails::Generator::Base
           copy_files_to[asset, lambda { |file| File.join('public', file) }]
         end
       end
-      
-      # Create directory for cached CMS pages
-      m.directory('app/views/pages/generated')
-      m.directory('app/views/layouts/generated')
 
       # Handle migrations
       Dir.glob(File.join(template_dir, 'migrate', '*')).each do |file|

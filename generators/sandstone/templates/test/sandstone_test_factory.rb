@@ -15,6 +15,16 @@ module Sandstone
       Editor.create! default_attributes.merge(attributes)
     end
 
+    def create_user!(attributes = {})
+      default_attributes = {
+        :login => 'hank',
+        :email => 'hank@sandals-on-sandstone.com',
+        :password => 'hankword',
+        :password_confirmation => 'hankword'
+      }
+      User.create! default_attributes.merge(attributes)
+    end
+
     def create_page!(attributes = {})
       default_attributes = {
         :path => '',

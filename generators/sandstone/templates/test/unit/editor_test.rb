@@ -6,6 +6,6 @@ class EditorTest < ActiveSupport::TestCase
   should_have_many :pages, :audits
 
   def setup
-    create_editor!(:role => 'author')
+    create_editor!(:role => 'author', :user => create_user!)
   end
 end

@@ -6,7 +6,6 @@ rescue LoadError
   require File.expand_path(File.dirname(__FILE__) + "/../../../../test/test_helper")
 end
 
-require 'rubygems'
 require 'mocha'
 require File.dirname(__FILE__) + '/sandstone_test_factory'
 include Sandstone::TestFactory

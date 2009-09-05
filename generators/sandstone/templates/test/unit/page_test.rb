@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../sandstone_test_helper'
 
-class PageTest < Test::Unit::TestCase
+class PageTest < ActiveSupport::TestCase
   should_have_many :audits
   should_belong_to :page_template
   should_belong_to :editor

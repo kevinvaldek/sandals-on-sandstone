@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../sandstone_test_helper'
 
-class PageTemplateTest < Test::Unit::TestCase
+class PageTemplateTest < ActiveSupport::TestCase
   should_have_many :pages
   should_require_attributes :name
   should_require_unique_attributes :name

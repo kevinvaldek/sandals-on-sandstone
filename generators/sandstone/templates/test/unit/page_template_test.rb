@@ -2,8 +2,8 @@ require File.dirname(__FILE__) + '/../sandstone_test_helper'
 
 class PageTemplateTest < ActiveSupport::TestCase
   should_have_many :pages
-  should_require_attributes :name
-  should_require_unique_attributes :name
+  should_validate_presence_of :name
+  should_validate_uniqueness_of :name
 
   def setup
     create_page_template!(:content => 'eephus')

@@ -4,8 +4,8 @@ class PageTest < ActiveSupport::TestCase
   should_have_many :audits
   should_belong_to :page_template
   should_belong_to :editor
-  should_require_unique_attributes :path
-  should_require_attributes :content
+  should_validate_uniqueness_of :path
+  should_validate_presence_of :content
 
   def setup
     create_page!

@@ -34,6 +34,7 @@
 </div>
 
 <div>
+  <%= save_and_continue_button %>
   <%= f.submit "Save as Draft", :name => 'page[draft]' %>
   <%= f.submit "Save and Submit For Approval", :name => 'page[approve]' %>
   <%= f.submit "Publish", :name => 'page[publish]' if editor.manager? %>

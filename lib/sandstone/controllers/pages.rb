@@ -62,7 +62,11 @@ module Sandstone
           flash[:notice] = Page::EXPLICIT_ROUTES.include?("/#{@page.path}") ? 
             'Path already exists in system - page was updated for sitemap only' :
             'Page was successfully updated.'
-          redirect_to workspace_path
+
+          respond_to do |format|
+            format.html { redirect_to workspace_path }
+            format.js { render :text => flash.delete(:notice), :status => :ok }
+          end
         else
           render :action => "edit" 
         end

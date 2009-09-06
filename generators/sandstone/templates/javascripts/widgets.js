@@ -10,7 +10,8 @@ var Notice = new Class({
         this.element = document.id(element);
     },
 
-    flash: function() {
+    flash: function(text) {
+        if(text) this.setText(text);
         this.show();
         this.fadeOut.delay(this.options.displayTime, this);
     },

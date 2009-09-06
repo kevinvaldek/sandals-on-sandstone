@@ -21,5 +21,14 @@ ActionChain.add({
 
    'textarea': function() {
        this.moorte();
+   },
+
+   '.send_form:click': function(e) {
+       e.preventDefault()
+       this.form.set('send', {
+           onSuccess: function(responseText) {
+               Sandals.notice.flash(responseText);
+           }
+       }).send();
    }
 });
